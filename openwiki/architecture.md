@@ -53,7 +53,7 @@ The `to_dict()` / `from_dict()` methods provide JSON serialization. The API laye
 
 - Resolves the data directory from `LINKKEEP_HOME` env var (defaults to `~/.linkkeep/`).
 - Reads/writes `bookmarks.json` as a JSON array of bookmark dicts.
-- Provides `add()`, `remove()`, `load()`, `save()`, `count()`, `next_id()`.
+- Provides `add()`, `remove()`, `load()`, `save()`, `count()`, `next_id()`, `clear()`.
 - Lazily creates the parent directory and an empty `[]` file if missing.
 
 **Every operation is a full load → modify → save cycle.** There is no in-memory caching at the Store level. This is simple and safe for a single-process tool but means concurrent writers (e.g., CLI and API server simultaneously) could overwrite each other's changes.

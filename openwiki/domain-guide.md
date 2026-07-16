@@ -38,8 +38,9 @@ class Bookmark:
 | `add(url, title, tags)` | Loads, creates `Bookmark` with next ID, appends, saves, returns it |
 | `remove(bookmark_id)` | Loads, filters out by ID, saves. Returns `False` if ID not found |
 | `count()` | `len(self.load())` — convenience wrapper |
+| `clear()` | Saves an empty list `[]` to the JSON file, removing all bookmarks. Dangerous operation intended for test/reset scenarios. |
 
-**Business rule — ID allocation**: IDs are assigned as `max(existing_ids) + 1`. If all bookmarks are deleted and new ones added, IDs do not reset to 1 — they continue from the historical max. Deleted IDs are not reused.
+**Business rule — ID allocation**: IDs are assigned as `max(existing_ids) + 1`. If all bookmarks are deleted and new ones added, IDs do not reset to 1 — they continue from the historical max. Deleted IDs are not reused. `clear()` empties the store entirely (saves `[]`), which resets the ID counter back to 1 on the next `add()`.
 
 ### `tags.py` — Tag Normalization & Statistics
 
