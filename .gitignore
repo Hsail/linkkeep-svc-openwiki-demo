@@ -4,3 +4,6 @@ __pycache__/
 ._*
 .DS_Store
 *.egg-info/
+
+# OpenWiki 运行时噪音（issue #49，本机 0.1.2 多次真跑未复现，防御性预留）
+conversation_history/
