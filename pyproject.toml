@@ -1,0 +1,19 @@
+[project]
+name = "linkkeep-svc"
+version = "0.2.0"
+description = "多域书签管理服务：core（模型+存储）/ api（FastAPI REST）/ cli（命令行）/ sync（导入导出去重）"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "pydantic",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[project.scripts]
+linkkeep = "linkkeep.cli.main:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
