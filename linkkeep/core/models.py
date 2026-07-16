@@ -33,3 +33,7 @@ class Bookmark:
     def matches_any_tag(self, tags: List[str]) -> bool:
         """任一标签命中即返回 True，供未来"多标签筛选"用例复用（当前 CLI/API 只做单标签过滤）。"""
         return any(t in self.tags for t in tags)
+
+    def matches_all_tags(self, tags: List[str]) -> bool:
+        """km-9 复核用改动：全部标签都命中才返回 True（AND 语义，对照 matches_any_tag 的 OR 语义）。"""
+        return all(t in self.tags for t in tags)
