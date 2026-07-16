@@ -1,9 +1,21 @@
 """导出：把当前书签列表写到本地文件，供跨设备同步或备份。"""
 import json
 from pathlib import Path
-from typing import List
+from typing import Dict, List
 
 from ..core.models import Bookmark
+
+
+def count_by_tag(bookmarks: List[Bookmark]) -> Dict[str, int]:
+    """统计每个标签下的书签数量，供导出前预览分布用（未打标签的书签计入 "_untagged"）。"""
+    counts: Dict[str, int] = {}
+    for b in bookmarks:
+        if not b.tags:
+            counts["_untagged"] = counts.get("_untagged", 0) + 1
+            continue
+        for t in b.tags:
+            counts[t] = counts.get(t, 0) + 1
+    return counts
 
 
 def export_to_json(bookmarks: List[Bookmark], out_path: str) -> str:
