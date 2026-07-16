@@ -9,23 +9,25 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  # 实测新增：openwiki code --init/--update 每次运行都会用 dist/code-mode.js 的
-  # createCodeModeWorkflow() 无条件重写本文件（issue #282/#316 根因），只要本文件与该
-  # 硬编码模板存在任何字节差异（如本课删掉的 LangSmith 三行），add-paths 就会把这处改动
-  # 一并纳入自动 PR 的提交；而修改 .github/workflows/ 下的文件需要 workflows 权限，
-  # 官方 examples/openwiki-update.yml 的 permissions 块未声明它，第一次真跑在此真实失败
-  # （remote rejected: refusing to allow a GitHub App to update workflow without
-  # `workflows` permission）。加这一行修复，官方示例遗漏，如实记录进 pitfalls.md。
-  workflows: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      # 实测新增：openwiki code --init/--update 每次运行都会用 dist/code-mode.js 的
+      # createCodeModeWorkflow() 无条件重写本文件（issue #282/#316 根因）。只要本文件与该
+      # 硬编码模板存在任何字节差异（如本课删掉的 LangSmith 三行），add-paths 就会把这处改动
+      # 一并纳入自动 PR 的提交；而"修改 .github/workflows/ 下文件"这件事，GITHUB_TOKEN
+      # 天生不被授予该权限（不存在 permissions.workflows 这个可声明的键，首次真跑在此真实
+      # 撞上 GitHub 硬限制：remote rejected: refusing to allow a GitHub App to update
+      # workflow without `workflows` permission）。官方 examples/openwiki-update.yml 没有
+      # 处理这个场景，本课用一个具备 workflow OAuth scope 的 PAT 换掉 checkout / 开PR 两步
+      # 默认的 GITHUB_TOKEN 来修复，如实记录进 pitfalls.md（非官方遗漏的批评、是真实边界）。
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          token: ${{ secrets.GH_PAT_WITH_WORKFLOW_SCOPE }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -50,6 +52,7 @@ jobs:
       - name: Create OpenWiki update pull request
         uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
         with:
+          token: ${{ secrets.GH_PAT_WITH_WORKFLOW_SCOPE }}
           add-paths: |
             openwiki
             AGENTS.md
