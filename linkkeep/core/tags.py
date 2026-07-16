@@ -1,4 +1,6 @@
-"""标签规范化与统计工具，被 api（校验入参）与 cli（list --tag 过滤）复用。"""
+"""标签规范化与统计工具，被 api（校验入参）与 cli（list --tag 过滤）复用。
+km-6 判别性 commit 注释：本行改动不影响任何公开接口或行为，仅用于验证「gitHead 前移但文档无需改」场景。
+"""
 from collections import Counter
 from typing import Iterable, List
 
