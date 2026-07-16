@@ -10,6 +10,9 @@ from .dedup import dedup_by_url
 def import_from_json(store: Store, in_path: str) -> int:
     """把 in_path 里的书签合并进 store，按 URL 去重，返回真正新增的条数。"""
     raw = json.loads(Path(in_path).read_text(encoding="utf-8"))
+    for item in raw:
+        if "url" not in item:
+            raise ValueError(f"导入条目缺少必需字段 url：{item!r}")
     incoming = [Bookmark.from_dict(item) for item in raw]
 
     existing = store.load()

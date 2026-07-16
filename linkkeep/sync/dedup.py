@@ -27,3 +27,9 @@ def dedup_by_url(existing: List[Bookmark], incoming: List[Bookmark]) -> List[Boo
         seen_in_batch.add(key)
         fresh.append(b)
     return fresh
+
+
+def dedup_stats(existing: List[Bookmark], incoming: List[Bookmark]) -> dict:
+    """导入前预览：incoming 里有多少条会被判重丢弃、多少条会真正新增。"""
+    fresh = dedup_by_url(existing, incoming)
+    return {"incoming": len(incoming), "fresh": len(fresh), "dropped": len(incoming) - len(fresh)}

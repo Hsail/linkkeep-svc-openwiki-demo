@@ -54,3 +54,7 @@ class Store:
             return False
         self.save(kept)
         return True
+
+    def count(self) -> int:
+        """当前 Store 里的书签总数，避免调用方每次都自己 len(load())。"""
+        return len(self.load())

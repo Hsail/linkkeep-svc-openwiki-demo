@@ -1,9 +1,10 @@
-"""子命令处理函数：add / list / remove / count / export / import。"""
+"""子命令处理函数：add / list / remove / count / export / import / top-tags。"""
 import argparse
 from typing import List
 
 from ..core.models import Bookmark
 from ..core.store import Store
+from ..core.tags import tag_counts, top_tags
 from ..sync.exporter import export_to_json, export_to_markdown
 from ..sync.importer import import_from_json
 
@@ -52,3 +53,9 @@ def cmd_export(store: Store, args: argparse.Namespace) -> None:
 def cmd_import(store: Store, args: argparse.Namespace) -> None:
     added = import_from_json(store, args.file)
     print(f"imported {added} new bookmarks (duplicates skipped)")
+
+
+def cmd_top_tags(store: Store, args: argparse.Namespace) -> None:
+    bookmarks = store.load()
+    for tag, count in top_tags(tag_counts(bookmarks), n=args.n):
+        print(f"{tag}\t{count}")

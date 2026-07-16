@@ -26,3 +26,8 @@ def tag_counts(bookmarks: Iterable[Bookmark]) -> Counter:
         for t in b.tags:
             counter[normalize_tag(t)] += 1
     return counter
+
+
+def top_tags(counts: Counter, n: int = 5) -> List[tuple]:
+    """从 tag_counts 结果里取出现次数最高的前 n 个标签，供 CLI 概览命令使用。"""
+    return counts.most_common(n)

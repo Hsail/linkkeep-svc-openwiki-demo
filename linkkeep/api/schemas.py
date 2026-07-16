@@ -25,3 +25,10 @@ class BookmarkOut(BaseModel):
 class TagCount(BaseModel):
     tag: str
     count: int
+
+
+class BookmarkListOut(BaseModel):
+    """列表接口的包裹形状：带上 total，避免客户端只靠数组长度猜总数。"""
+
+    total: int
+    items: List[BookmarkOut]
