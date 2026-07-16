@@ -10,3 +10,9 @@ def get_store() -> Store:
     if _store_singleton is None:
         _store_singleton = Store()
     return _store_singleton
+
+
+def reset_store_singleton() -> None:
+    """测试专用：强制下一次 get_store() 重新构建 Store（避免用例间共享单例状态）。"""
+    global _store_singleton
+    _store_singleton = None
