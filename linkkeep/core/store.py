@@ -58,3 +58,7 @@ class Store:
     def count(self) -> int:
         """当前 Store 里的书签总数，避免调用方每次都自己 len(load())。"""
         return len(self.load())
+
+    def clear(self) -> None:
+        """清空当前 Store 的全部书签（危险操作，供测试与"重置本机数据"场景使用）。"""
+        self.save([])
