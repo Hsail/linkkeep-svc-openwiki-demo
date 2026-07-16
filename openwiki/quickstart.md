@@ -82,7 +82,7 @@ All tests use temp directories for isolation; no shared state.
 
 ## CI / OpenWiki Automation
 
-`.github/workflows/openwiki-update.yml` runs a daily scheduled (08:00 UTC) OpenWiki documentation refresh. It installs OpenWiki via npm, runs `openwiki code --update --print`, and opens a pull request with regenerated docs. The workflow uses OpenRouter (GLM model) and requires `OPENROUTER_API_KEY`.
+`.github/workflows/openwiki-update.yml` runs a daily scheduled (08:00 UTC) OpenWiki documentation refresh. It installs OpenWiki via npm, runs `openwiki code --update --print`, and opens a pull request with regenerated docs. The workflow uses OpenRouter (GLM model) and requires `OPENROUTER_API_KEY`. It also optionally enables LangSmith tracing (`LANGSMITH_API_KEY`, `LANGCHAIN_PROJECT`, `LANGCHAIN_TRACING_V2`).
 
 ## Key Design Decisions
 
