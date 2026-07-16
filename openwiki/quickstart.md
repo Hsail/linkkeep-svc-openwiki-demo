@@ -1,3 +1,11 @@
+---
+type: Project
+title: linkkeep-svc Quickstart
+description: Multi-domain bookmark management service in Python. Entry point for OpenWiki documentation.
+resource: /README.md
+tags: [linkkeep, bookmark-management, python, fastapi, cli]
+---
+
 # linkkeep-svc — OpenWiki Quickstart
 
 linkkeep-svc is a multi-domain **bookmark management service** written in Python (3.9+). It organizes a simple bookmark workflow into four cleanly separated domains — core data models, a FastAPI REST API, a command-line interface, and a sync layer for import/export with deduplication.

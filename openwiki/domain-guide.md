@@ -1,3 +1,11 @@
+---
+type: Reference
+title: linkkeep-svc Domain Guide
+description: Per-domain reference for key types, functions, and business rules.
+resource: /linkkeep/core/models.py
+tags: [reference, domains, business-rules]
+---
+
 # Domain Guide
 
 This page is a per-domain reference for the key types, functions, and business rules in linkkeep-svc. Use it to quickly find where a behavior lives and why.

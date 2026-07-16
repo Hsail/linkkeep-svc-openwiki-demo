@@ -1,3 +1,11 @@
+---
+type: Architecture
+title: linkkeep-svc Architecture
+description: How the four domains (core, api, cli, sync) interact through a shared JSON-backed Store.
+resource: /linkkeep/__init__.py
+tags: [architecture, core, api, cli, sync]
+---
+
 # Architecture
 
 ## Overview
