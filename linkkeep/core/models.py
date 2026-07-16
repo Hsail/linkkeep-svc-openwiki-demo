@@ -29,3 +29,7 @@ class Bookmark:
 
     def matches_tag(self, tag: str) -> bool:
         return tag in self.tags
+
+    def matches_any_tag(self, tags: List[str]) -> bool:
+        """任一标签命中即返回 True，供未来"多标签筛选"用例复用（当前 CLI/API 只做单标签过滤）。"""
+        return any(t in self.tags for t in tags)
