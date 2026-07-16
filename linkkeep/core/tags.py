@@ -31,3 +31,8 @@ def tag_counts(bookmarks: Iterable[Bookmark]) -> Counter:
 def top_tags(counts: Counter, n: int = 5) -> List[tuple]:
     """从 tag_counts 结果里取出现次数最高的前 n 个标签，供 CLI 概览命令使用。"""
     return counts.most_common(n)
+
+
+def rarest_tags(counts: Counter, n: int = 5) -> List[tuple]:
+    """取出现次数最少的前 n 个标签，供排查"可能打错字的孤儿标签"用。"""
+    return counts.most_common()[-n:][::-1] if counts else []
