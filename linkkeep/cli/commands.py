@@ -4,7 +4,7 @@ from typing import List
 
 from ..core.models import Bookmark
 from ..core.store import Store
-from ..core.tags import tag_counts, top_tags
+from ..core.tags import tag_counts, top_tags, tag_overlap
 from ..sync.exporter import export_to_json, export_to_markdown
 from ..sync.importer import import_from_json
 
@@ -59,3 +59,10 @@ def cmd_top_tags(store: Store, args: argparse.Namespace) -> None:
     bookmarks = store.load()
     for tag, count in top_tags(tag_counts(bookmarks), n=args.n):
         print(f"{tag}\t{count}")
+
+
+def cmd_tag_overlap(store: Store, args: argparse.Namespace) -> None:
+    """km-11 案例3 真实代码改动：新增子命令，回答"这两个标签共同覆盖了多少条书签"。"""
+    bookmarks = store.load()
+    n = tag_overlap(bookmarks, args.tag_a, args.tag_b)
+    print(f"{args.tag_a} & {args.tag_b}: {n}")

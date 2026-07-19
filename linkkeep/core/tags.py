@@ -38,3 +38,16 @@ def top_tags(counts: Counter, n: int = 5) -> List[tuple]:
 def rarest_tags(counts: Counter, n: int = 5) -> List[tuple]:
     """取出现次数最少的前 n 个标签，供排查"可能打错字的孤儿标签"用。"""
     return counts.most_common()[-n:][::-1] if counts else []
+
+
+def tag_overlap(bookmarks: Iterable[Bookmark], tag_a: str, tag_b: str) -> int:
+    """统计同时带有 tag_a 与 tag_b 两个标签的书签数量（km-11 案例3 真实代码改动：
+    供 CLI 新子命令 `tag-overlap` 使用，回答"这两个标签共同覆盖了多少条书签"这个真实需求，
+    与 matches_all_tags 的 AND 语义一致但输入是标签名而非 Bookmark 方法）。"""
+    a, b = normalize_tag(tag_a), normalize_tag(tag_b)
+    count = 0
+    for bm in bookmarks:
+        normalized = {normalize_tag(t) for t in bm.tags}
+        if a in normalized and b in normalized:
+            count += 1
+    return count

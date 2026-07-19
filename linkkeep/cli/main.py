@@ -37,6 +37,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_import.add_argument("file")
     p_import.set_defaults(func=c.cmd_import)
 
+    p_overlap = sub.add_parser("tag-overlap", help="统计同时带有两个标签的书签数量")
+    p_overlap.add_argument("tag_a")
+    p_overlap.add_argument("tag_b")
+    p_overlap.set_defaults(func=c.cmd_tag_overlap)
+
     return parser
 
 

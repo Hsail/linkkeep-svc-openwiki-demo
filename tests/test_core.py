@@ -4,7 +4,7 @@ from pathlib import Path
 
 from linkkeep.core.models import Bookmark
 from linkkeep.core.store import Store
-from linkkeep.core.tags import normalize_tag, tag_counts
+from linkkeep.core.tags import normalize_tag, tag_counts, tag_overlap
 
 
 def _tmp_store() -> Store:
@@ -57,3 +57,15 @@ def test_tag_counts():
     counts = tag_counts(bookmarks)
     assert counts["ref"] == 2
     assert counts["demo"] == 1
+
+
+def test_tag_overlap():
+    """km-11 案例3 真实代码改动：验证 tag_overlap 大小写不敏感、AND 语义。"""
+    bookmarks = [
+        Bookmark(id=1, url="https://a.com", tags=["Ref", "demo"]),
+        Bookmark(id=2, url="https://b.com", tags=["ref"]),
+        Bookmark(id=3, url="https://c.com", tags=["demo"]),
+    ]
+    assert tag_overlap(bookmarks, "ref", "Demo") == 1
+    assert tag_overlap(bookmarks, "ref", "ref") == 2
+    assert tag_overlap(bookmarks, "nope", "demo") == 0
