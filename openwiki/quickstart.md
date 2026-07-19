@@ -44,11 +44,12 @@ linkkeep list
 linkkeep list --tag ref
 linkkeep count --tag ref
 linkkeep top-tags --n 5
+linkkeep tag-overlap ref demo
 linkkeep export --format markdown --out backup.md
 linkkeep import other-device-export.json
 ```
 
-Subcommands: `add`, `list`, `remove <id>`, `count`, `export`, `import`, `top-tags`.
+Subcommands: `add`, `list`, `remove <id>`, `count`, `export`, `import`, `top-tags`, `tag-overlap`.
 
 ### REST API
 
@@ -101,7 +102,7 @@ All tests use temp directories for isolation; no shared state.
 
 ## Backlog
 
-- **`top-tags` CLI subcommand not in README**: The `top-tags` subcommand (added in the latest commit) is implemented in `cli/commands.py` and wired in `cli/main.py` but not documented in `README.md`. Reason: README is slightly stale relative to the latest commit.
+- **`top-tags` and `tag-overlap` CLI subcommands not in README**: Both subcommands are implemented in `cli/commands.py` and wired in `cli/main.py` but not documented in `README.md`. Reason: README is slightly stale relative to the latest commit.
 - **`BookmarkListOut` schema unused**: `api/schemas.py` defines `BookmarkListOut` (wrapper with `total` + `items`) but `routes.py` returns a plain `List[BookmarkOut]`. Reason: schema prepared but endpoint not yet updated to use it.
 - **`dedup_stats` not exposed via CLI or API**: `sync/dedup.py` provides `dedup_stats()` for pre-import preview, but no CLI/API surface calls it yet. Reason: utility added for future use.
 - **`count_by_tag` in exporter vs `tag_counts` in core**: Two overlapping tag-counting functions exist (`sync/exporter.count_by_tag` and `core/tags.tag_counts`). Reason: exporter's version handles `_untagged` grouping differently and is local to export formatting.
