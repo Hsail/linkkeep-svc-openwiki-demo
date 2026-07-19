@@ -24,7 +24,7 @@ linkkeep-svc follows a **layered domain architecture** with four packages, each 
      ┌────────┴────────┐    ┌──────────┴──────────┐    ┌────────┴────────┐
      │  linkkeep.api   │    │   linkkeep.cli      │    │  linkkeep.sync  │
      │  FastAPI REST   │    │   argparse CLI      │    │  export/import  │
-     │  CRUD + tags    │    │   7 subcommands     │    │  dedup by URL   │
+     │  CRUD + tags    │    │   8 subcommands     │    │  dedup by URL   │
      └─────────────────┘    └──────────┬──────────┘    └─────────────────┘
                                        │
                                        └──────► (cli imports sync.exporter
@@ -93,7 +93,7 @@ linkkeep/
 │   ├── __init__.py
 │   ├── models.py        # Bookmark dataclass
 │   ├── store.py         # Store: JSON persistence, CRUD, ID allocation
-│   └── tags.py          # normalize_tag, normalize_tags, tag_counts, top_tags, rarest_tags
+│   └── tags.py          # normalize_tag, normalize_tags, tag_counts, top_tags, rarest_tags, tag_overlap
 ├── api/
 │   ├── __init__.py
 │   ├── app.py           # FastAPI app assembly + /health

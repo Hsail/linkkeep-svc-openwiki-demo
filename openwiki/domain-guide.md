@@ -59,6 +59,7 @@ class Bookmark:
 | `tag_counts(bookmarks)` | Returns `Counter` of normalized tags across all bookmarks' tag lists |
 | `top_tags(counts, n=5)` | Returns `counts.most_common(n)` — top N `(tag, count)` pairs |
 | `rarest_tags(counts, n=5)` | Returns the N least-common `(tag, count)` pairs (reversed ascending). Helps find orphan or misspelled tags. Not yet exposed via CLI or API. |
+| `tag_overlap(bookmarks, tag_a, tag_b)` | Counts bookmarks that have **both** `tag_a` and `tag_b` (AND semantics). Tags are normalized (case-insensitive) before comparison. Powers the CLI `tag-overlap` subcommand. |
 
 **Business rule — tag normalization**: Tags are normalized to lowercase + stripped. `"Ref"`, `" ref "`, and `"REF"` all collapse to `"ref"`. However, `normalize_tag` is applied in `tag_counts()` and `top_tags()` but is **not** automatically applied when a bookmark is added via `Store.add()`. Tags are stored as-is in the JSON file. This means the stored format may contain un-normalized tags if added directly through `Store.add()` without pre-normalization.
 
@@ -129,8 +130,9 @@ Argparse-based command-line interface. Entry point registered as `linkkeep` cons
 | `cmd_export` | `export --format <json\|markdown> --out <path>` | Delegates to `sync.exporter` |
 | `cmd_import` | `import <file>` | Delegates to `sync.importer`, prints `imported N new bookmarks` |
 | `cmd_top_tags` | `top-tags [--n 5]` | Prints `tag\tcount` for top N tags |
+| `cmd_tag_overlap` | `tag-overlap <tag_a> <tag_b>` | Prints count of bookmarks having both tags (AND, case-insensitive) |
 
-**Note**: The `top-tags` subcommand was added in the latest commit (`5b9f1e9`) but is not documented in `README.md`.
+**Note**: The `top-tags` and `tag-overlap` subcommands are not documented in `README.md`.
 
 ---
 
@@ -174,3 +176,4 @@ Export, import, and deduplication for cross-device bookmark synchronization.
 8. Returns count of newly added bookmarks.
 
 **Business rule — ID reassignment on import**: Incoming bookmarks' original IDs are discarded. Fresh bookmarks get new sequential IDs continuing from the existing max. This prevents ID collisions when merging data from another device.
+ new sequential IDs continuing from the existing max. This prevents ID collisions when merging data from another device.
