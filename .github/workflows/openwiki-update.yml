@@ -65,7 +65,6 @@ jobs:
             openwiki
             AGENTS.md
             CLAUDE.md
-            .github/workflows/openwiki-update.yml
           # 长期处置（真跑验证，见 experiment-log Step 10）：从 add-paths 里去掉 workflow 文件
           # 自身这一行——writeCodeModeWorkflow() 仍会在 runner 工作区把它覆写脏，但既然不在
           # add-paths 里，create-pull-request 就不会把这处改动纳入待提交范围，PR 因此不再包含
