@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2fab3b40ece94abb4fdb5e280df43ed5cc42b9d803d024a2835f6a070559a529",
+  "claims": [
+    {
+      "id": "claim_b145e32f5639429896ff25d0a654c0d7",
+      "statement": "The four-domain dependency graph is acyclic: core depends on nothing within the project (stdlib only); api depends on core; cli depends on core and sync; sync depends on core only. cli does not depend on api; sync does not depend on cli or api; api does not depend on cli or sync.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/api/deps.py#L4-L4",
+          "version": "repo-lines-v1:sha256:1b99ed30997d91b769c3bc59db6e44434f41aa3bfedd72fa0d62b45630b6eb0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI5OWVkMzA5OTdkOTFiNzY5YzNiYzU5ZGI2ZTQ0NDM0ZjQxYWEzYmZlZGQ3MmZhMGQ2MmI0NTYzMGI2ZWIwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI5OWVkMzA5OTdkOTFiNzY5YzNiYzU5ZGI2ZTQ0NDM0ZjQxYWEzYmZlZGQ3MmZhMGQ2MmI0NTYzMGI2ZWIwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYxM2U4MDZjMDNlOGM4MmY1ZWMyMTM5NDU3ZTIwOGY2OTkyMDVkYWVlOGY0Zjc3NTI5MjBhNmVjMGZiYTEzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWY3ZTc1OWYwZTA2ODNmZDY1ODA1ZjBlNTU3MjNmZDgwMTFlNTkyZDgzYTc0ZjA1NzFiYmQwMjU0NjkxMzVlZSJ9"
+        },
+        {
+          "resource": "repo://linkkeep/api/routes.py#L4-L7",
+          "version": "repo-lines-v1:sha256:ce1ebdb1f6c37745b0bb586b115db8937140952fae2e5f3e1e0710fa6d290ae3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTU3NGE3M2Q5OWViODBlNjNmODdmZDM2YmRjMDM4YzMxMDQ0Zjc0NmU0YzIyMDBhODMxMWUwMTc2MzBjZjVjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU5YzkwNTI3NTE0NmRmMGQzNzgxYjE2N2ZiZmU0NzE5ZDYzOTA5OWMwYzQ2YTYxMWZiMTdkZmFhNTgwZjQxOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2I3MGQ2YTFmZmE0MzhiYzU0MjcxN2U2YjVhZGYxY2YxMDk3MzkzOWE1ZGNkMTVhNjc4MzA5Y2I0MzlkYWQ5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDY5ZWEyZWJmOGUzZjZlZDdjYzc1YjhiNTdjNDAyOGExZDI3OWVmYzJhZWQwNDU2Mzc4NzM0YzZmNmNiMDliYSJ9"
+        },
+        {
+          "resource": "repo://linkkeep/cli/commands.py#L4-L9",
+          "version": "repo-lines-v1:sha256:17c86bc4ca9d9755b04adf532b3961622220e917310c94f2acba8a77e1d16cad:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBlMGEzYWQ1MDk5Y2Q2NDVkZGVkOGU3Yjg3ZTgyNzQ2ZTFlMzZhY2U2ZGE4NzliNjI5YmU1YWYyZDAyMmU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODhlZDM5NWI4MjJkYWE0NzY3YjJlZGRkNTg3ODcxYWE4YzEzZjk0MjhlZWI3OWQxZGEwNTYxM2M1YzAxM2JmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjliYmRhODNmNjg4ZjZhOTRlZWUwM2U2N2QwYjQxZmQ0MTU1MWMxMWFhNGYzMjYxMjFhMjIyNTEyYjFkMzM0YyJ9"
+        },
+        {
+          "resource": "repo://linkkeep/core/store.py#L1-L4",
+          "version": "repo-lines-v1:sha256:75f4172501ce80f5fd4ed2c08b157337e362ca0504a73cafaf690df90e48ae7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJiYTkwMmEyNDE0NjlmOTEyZjFjNGM0NWQ4ZmZmMzhhYTcyNWFjZjYyNzhhYzZhZjczNTU5YzU2Nzc0ZDhmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NiOWZmY2NiYTUxNDZiMmRkMTc3YTMwYzMwNTdhNDM5NWViZDVjNzQ1ZDA3ODlkMmVkOTVkMGNmNGFmZTI3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM4MTAyMmYzNTRlMzUyM2FmYzEyOTA2ZmZjYTNhMWUyMDUzZDZiNzQ4ZDcxYTc5ZWVmNTZjNWY4M2E4MWMzMiJ9"
+        },
+        {
+          "resource": "repo://linkkeep/sync/importer.py#L4-L6",
+          "version": "repo-lines-v1:sha256:c95504d6bd899c5861459ff5754791df4d3fb1d6cdaf3056793cacbbe881e430:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWMzMzJiZTc5ZTA2NzUxZDMxOGQ1MTFjOGJlMWU5M2MzNzUyN2QzNTQxN2ZiY2YyZDc4YjEwNTk0ZjMxMTM3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTc3NjIxZjQ0MTMxMTM5ZmYwZTI0ZTQxZjE4MTBlMDY1YzFiNTExZDcxNjI4MGFkYjczOTY1YTBkMzcyODA3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTM5ZjFjNjM5YzMwNGUzODJjNTA4MmFhMmI5MzUyYjBlNjI5OWVkOTE4NTI3MmUxN2M3OThmZjk4ODAxYTc5ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_64de8e546c62488e86541876550bf749",
+      "statement": "The package version is 0.2.0, declared identically in linkkeep/__init__.py (__version__) and pyproject.toml ([project] version), and the FastAPI app is constructed with version 0.2.0.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/__init__.py#L8-L8",
+          "version": "repo-lines-v1:sha256:667d4a15b970b851e20d17510224670c14646cfb6d5a1e388ca6b9cc6da8bf41:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY3ZDRhMTViOTcwYjg1MWUyMGQxNzUxMDIyNDY3MGMxNDY0NmNmYjZkNWExZTM4OGNhNmI5Y2M2ZGE4YmY0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY3ZDRhMTViOTcwYjg1MWUyMGQxNzUxMDIyNDY3MGMxNDY0NmNmYjZkNWExZTM4OGNhNmI5Y2M2ZGE4YmY0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjE2MTRmM2I3MzU2YzIzMTI4MmRiZGJhMDE3MjliOGQ1NGU3N2VhNWQwZjJlYTk5YWU3YTY5NDE1ODlkOGM3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://linkkeep/api/app.py#L6-L6",
+          "version": "repo-lines-v1:sha256:a1745e47ca10161e425559be78cf3134846b4d5bf19afd25d5c815a45d043015:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE3NDVlNDdjYTEwMTYxZTQyNTU1OWJlNzhjZjMxMzQ4NDZiNGQ1YmYxOWFmZDI1ZDVjODE1YTQ1ZDA0MzAxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE3NDVlNDdjYTEwMTYxZTQyNTU1OWJlNzhjZjMxMzQ4NDZiNGQ1YmYxOWFmZDI1ZDVjODE1YTQ1ZDA0MzAxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWEzNWM5NGMxODRkNDllMzg5ODhmYTIwZTdlMjgxYTFlMzg4OTNjOWYzYzg2ZDlkZDFjODBjOTBiY2VmODk3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTYwNDZlYzNkZTA3ODFkMTQ1MGExZTRmMTcyYzdmZjBmOGIwMjc3MTBhNjU4NGFiNjFlYjkyZmNmYzRlYjE1ZSJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L3-L3",
+          "version": "repo-lines-v1:sha256:5d05618a348778854c5736364b87d8f412b15765c7493afd5551ec625b463ef4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQwNTYxOGEzNDg3Nzg4NTRjNTczNjM2NGI4N2Q4ZjQxMmIxNTc2NWM3NDkzYWZkNTU1MWVjNjI1YjQ2M2VmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQwNTYxOGEzNDg3Nzg4NTRjNTczNjM2NGI4N2Q4ZjQxMmIxNTc2NWM3NDkzYWZkNTU1MWVjNjI1YjQ2M2VmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzkzZjZmNGQ3NjRjNmQyZWYzZjdiNDQ1MjMxMTkwMGY2MWFmMDdmNDc1Y2IwYzQwYjQ4NGE1YmUwMGFlZGRmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQxODk1NDg2ZGIwYWZkNWI3MzM1YTA5YjQ5OTlhZTM0Mzg1NTU1OWJiM2Q3MGU1MDY3YzQyNWZlOGIwNzVlNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6babbffa7d0467f8db38e7441a2e9da",
+      "statement": "Bookmark is a dataclass with fields id (int, required), url (str, required), title (str, default \"\"), tags (List[str], default []), and created_at (str, default UTC ISO 8601 now). to_dict uses dataclasses.asdict; from_dict tolerates missing title, tags, and created_at keys. It also exposes matches_tag, matches_any_tag (OR), and matches_all_tags (AND).",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/core/models.py#L1-L39",
+          "version": "repo-lines-v1:sha256:00ddc2e3fd1eae27e875caa9ba39b7c4569206974b25f8d8d0c8de68ff849f48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkMjFiODhlZmZhODE3OWUzZmQ0OWNhZTc0NzgwYmI5NTlhY2M3NDg3YTZiNGU0NGQzNTU5ODlmNTM4YTZjYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjMmY3NjY4ZmFhZjYwMDg1MWQ4NzUyYTQ0ZDQzNTBlM2IyYTdhOWQ0NzdmMzU5ZDAzNjhhZDM3ZTA5YjdiODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b788a716bb424affaedbf69d2a2e63c3",
+      "statement": "Store is the single persistence abstraction: every mutating operation (add, remove, clear) and every read (load, count) is a full load->modify->save cycle over bookmarks.json with no in-memory caching. add loads the list, appends, and saves; remove loads, filters, and saves; count loads and returns len. There is no locking, so concurrent writers can overwrite each other.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/core/store.py#L28-L64",
+          "version": "repo-lines-v1:sha256:a0bb74e06f749fbdc5d7126aa64703d523c30689847b8057dbb65e93bed4961a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkZjU0YWViYjY5OTJkOTEwZmJmNzFmZTljMGUxYjlmMzI2NmJkYTRkNWIxYWFhZmQxMTE0MjczZGU1YjMwZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYjI2NWI4ZDM0NjQxYTJjZTgyODA2NTk5ZmY1YjRmZGQ5YTg1MGZiZjIzNThlYmJlMWM4MDNlYjYxOTU5YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiYjkxNTNhYTJkNWRkNDJjODc4MTk5OWY1M2FiNjE5MGY3MGY1ZDI4NjlmZDk4NjBlNDcxZmYwZjc5YjBjZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba457d155c004f688025f2ddc1562775",
+      "statement": "Store resolves its data file from LINKKEEP_HOME env var (default ~/.linkkeep/) and always uses bookmarks.json under that root. _ensure lazily creates the parent directory and an empty [] file if missing.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/core/store.py#L8-L17",
+          "version": "repo-lines-v1:sha256:fd87e312035bb0ba5ee7210465e586679dadb5ea98a57df48c20afd54e135876:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjODEwMjJmMzU0ZTM1MjNhZmMxMjkwNmZmY2EzYTFlMjA1M2Q2Yjc0OGQ3MWE3OWVlZjU2YzVmODNhODFjMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmOGYzNWJkNDZkN2ZkMzYzOGE1ZjU5MjdiYThiYTRkODUyNWE5M2QyNjc0NjM5MTc4OGVkOWJjMWU4MTgwMWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cdf20814367426abea08657fb16a26d",
+      "statement": "Store.next_id(bookmarks) returns max(existing ids, default 0) + 1. Because it recomputes from the current set, removing the highest-ID bookmark causes that ID to be reused by the next add (IDs are not guaranteed unique forever). clear saves [].",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/core/store.py#L28-L32",
+          "version": "repo-lines-v1:sha256:00ddac7fb90035ccda04e7b9c97378e2974edbf4fb91e1974a1ffc08631362a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRmNTRhZWJiNjk5MmQ5MTBmYmY3MWZlOWMwZTFiOWYzMjY2YmRhNGQ1YjFhYWFmZDExMTQyNzNkZTViMzBkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZjYWViYjg0ZGI0Njk4NWViNDkyNzM5MDA2YTg0OGZkNmViYzQwNjM1MTFhNDMyMDAzYjFmMDJhM2FkYzE0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmJiOTE1M2FhMmQ1ZGQ0MmM4NzgxOTk5ZjUzYWI2MTkwZjcwZjVkMjg2OWZkOTg2MGU0NzFmZjBmNzliMGNlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODYzYzNhMTdmZDdiMDg4NjAyMzg5NzIxOTYyYjM4ZjYzZDUyNzZmZThjOTc5MDQ0ZTAwZjVjODk3NjYzMDZkMyJ9"
+        },
+        {
+          "resource": "repo://linkkeep/core/store.py#L60-L63",
+          "version": "repo-lines-v1:sha256:cbd062d0b493df33d82a28b518fff373a754d49e1fd7bfeda4222f33a25073e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q3ODFmMjBhM2EwNjIyODY3YzNlYzdjODk0ZTE5NjFlNTIyNjM0NzIzM2ZjMzBlYzg4YTg1MTViMDE4YmQ1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI5NmE3NGJmZTU4ZTdlNjJjZDViNTQyMWJmY2IzNDVjZjY2ZjkzOWY0Y2Q0ODk5YWNkODc5NzZlZmVlNjNkYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzBmYjc1MWU0ZTNkYmRiODY5NTgwZTFiNmQ3M2U2OTJkMTU3ZDY2MTg3MzE1YjU1YjM2ZTI5YmQ4NzY3NjcwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJiMjY1YjhkMzQ2NDFhMmNlODI4MDY1OTlmZjViNGZkZDlhODUwZmJmMjM1OGViYmUxYzgwM2ViNjE5NTljMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fbd834b98f1a44bebeaeec5a6c9ba8a5",
+      "statement": "Tags are stored as-is: Store.add and the API create endpoint pass tags through unchanged. Normalization (lowercase, strip) is applied only at statistics/query time inside core.tags functions (tag_counts, tag_overlap), so mixed-case tags persist in the JSON file though statistics collapse case variants.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/api/routes.py#L19-L22",
+          "version": "repo-lines-v1:sha256:4a6043b0a77e0d145b5fe0b81d6206cc895c9c42b2937f6c68b1f36bca94101b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJlYTcwMTE2MDczMDYxZTE5NzU0YWEzYzMxMzBkMjMzN2U0N2Y5OWMyOWIwMjQxNjQxODk2MjFmMDMyNmMzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRkOTc1ZTRmOGRiODU2ZmI4YWE5OTZjZGQzMjc2MWFmNjdhMGYyYTRhNDExMDkxMTQ2OTU5OGNhMzIzMzI4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JmOTBmMGZiYmI1YzdlZjViNDkzYzE0Njc1MGI2N2YyNDNmMmJmNGExMDBmM2NkNmVlNjk2ODBhMWQzNTkzYiJ9"
+        },
+        {
+          "resource": "repo://linkkeep/core/store.py#L38-L42",
+          "version": "repo-lines-v1:sha256:cca8284317e00475ad4b171504735411afdcf65cccecefe3ed9c490b340282f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdlNWRiZDVmOTFlNzYzMDZhNWQyYTNmZjMyMzVjYTczYWFkN2JlNWQ0ZWQ0NjE3NjhlYjA4ZTc3MDI0NTk2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjhmYjBjMmQ5NTM5MzU2MjlmMDA4MjE1NjU1MTFiZmU3OWNlMjE2NTI3YmFlNWQyNDAzY2JhNTFkNGVlNDBlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDdiNTc3OTM1MWRiMWQxZDdiODY1YzllMTAxYjg5NzExMWI2ZmMzNzNjNDE3ZjczYzRmMDg0OTljMDVkMjczNiJ9"
+        },
+        {
+          "resource": "repo://linkkeep/core/tags.py#L27-L31",
+          "version": "repo-lines-v1:sha256:bff0f0ca40a5f127e4841a39ad21ab34c2496fb990cdff8a347a0bb5f5516412:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGYxOWQ0MzYzZGJkY2YxOGY5NmRkMDY1YTNjNjk2M2Q2Yzk2MmY5NTNiNDc1YTMwMTNhNDgxMDg4ZDhmNThkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDE3YWEzNzBlMGQzMjcxMjQ2MTIwZTMxNmYyYjBiMzI0MGMzODllYjAwMDc1M2IzOTA2MjZjZTg1NGE1OGQwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzQ5ZTlhYTAwZDU5MDQzZmY1NmU5NWVkMDAyMTBkZWI2MTYyYTdkMTA5ZTM1YWU5NTc2MjMxYzhkM2YwNDg1OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0baa6919849b44898cec27c299285184",
+      "statement": "The API layer exposes Store via deps.get_store() as a FastAPI dependency that lazily initializes a module-level _store_singleton on first request and reuses it thereafter. The singleton caches the Store object, not the data, so each operation still does a full file read/write. reset_store_singleton() clears it for test isolation.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/api/deps.py#L1-L18",
+          "version": "repo-lines-v1:sha256:a7c7c0cc363b17d8ec906202fe464a73fabf0d53a569803cfd44e82d59f4faf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NjBmOTNiYzkzNmIxNjU2YTliMWYwMjI3ZjYxN2RmMTIwMDc3ZWVlODgzNmQ1ZTg0ZDBkZjRhZWFmM2ZlMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjODBhMjM3ZTc4MGY2OTgyNGIzZGU2MzBjN2I5ZjVmN2JjNGJhMGM5NzIzYTQ0NDRmODVmMzI2OTk1MjM1OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_597ac7b183ce473f9e58d49fa169cc0b",
+      "statement": "The API router is mounted under /bookmarks and provides GET /bookmarks (optional ?tag= single-tag filter), POST /bookmarks (201, returns BookmarkOut), DELETE /bookmarks/{id} (204 or 404), and GET /bookmarks/tags (tag counts via core.tags.tag_counts). There is no update (PUT/PATCH) endpoint. app.py also exposes a standalone GET /health returning {\"status\": \"ok\"}.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/api/app.py#L1-L12",
+          "version": "repo-lines-v1:sha256:789b050cf7efcb299601dbe1e7024e9e350e4d76a4acd12edc5bde37c5178599:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2MzgyZWViNjdkOTYzY2I1OTk4ZjlmYzhkNjg4NTYxOGQ2Njg1NzgyMDkxOTA0OGE0NjYzZTllNTEzMTIwYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNjRlZDZhZjhkM2RlYzcwNzEyMjk1OTY1ZDJjN2I3NTMzNDU1MTEyNmU2ZmYzNmFjYzU4ZTJmMTdlMGVhMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://linkkeep/api/routes.py#L1-L37",
+          "version": "repo-lines-v1:sha256:32defd2153a62400993832b0052b5059c493a88eefa4938af297931047701e87:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4ODY0NzM3N2E5ZWIxZDZmNjcxMTcwODYzMDE4MWIyY2M3NjVkYmE4NzIyOGQ3ZGFmMzY0YzAwNmY5ZjEyYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZTQ1YTZhNzJjYjYxOTY3ZjQwNTI0ZDU1MzE3NDQ2ZDE5ZDhkN2U4MzVjZTQ0NjBkMWJiOGFiOWY3ZmFhNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_90d43305bf86402d9cdcef0a77de2fe9",
+      "statement": "BookmarkListOut (a Pydantic wrapper with total and items fields) is defined in api/schemas.py but is not used by any route; the list endpoint returns a bare List[BookmarkOut].",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/api/routes.py#L10-L15",
+          "version": "repo-lines-v1:sha256:1a21e1e22c0345c72e827e4653c39aa2ce092297a7ca4e36a140da703b1acdc6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAxODg4ZmJkMjAzZDc1ZjQ1NzUxZGE4ZTA4NTdhMTllNWUwN2IwOTQyNzcyNTBkMDRjMDVkYTg5YTJhNjM0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQxMzMyOThjNjg2ZDc3NjA1YTg5YWMwYzAxYzRiZTllOTRjZDYxZjI2MWUwNzdmMjJmMDBmMGI1YzdkY2E4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGI2YTk5YzUwZDU0MTM1MjRkOWE2NGYzZWYyMjQ4ZGE4ZWNiNTQyYzFhNGFlMjI3MGZlNDRiYWVkYzAwZmIyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzRkOTc1ZTRmOGRiODU2ZmI4YWE5OTZjZGQzMjc2MWFmNjdhMGYyYTRhNDExMDkxMTQ2OTU5OGNhMzIzMzI4MCJ9"
+        },
+        {
+          "resource": "repo://linkkeep/api/schemas.py#L30-L34",
+          "version": "repo-lines-v1:sha256:56c33fa7a2b232a03e2c29f0a07bb9beb62d012f8c46625a9ba7e679f1f7b9c5:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5NzcwMTIxY2UwMmJkOWE5NWQ3NmU3NmNmODg2YmZjOGJkYjA5MjlhOWU4YjUzYjVhYjRjMjk1NGFiMTc3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBhZWRiMmQxMzFlY2YzZGQyNDJjMzhhNjRjNGZlMTRiYzQ2MWNmMzM2NTA0MDhhOWVhYWE4MGE2ZmVjOTA2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJhZTY5NDQ3ZjEwY2UwYzAzN2NkOWM5ZThmOTBhNGRhNTljZDRmMDcwN2M5YmE2ZTlkNjgyYWM2ZTZmZjY3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0cc6804f9454efc9ecefc79281b0d30",
+      "statement": "The CLI builds an argparse parser with one subparser per subcommand; each subparser sets func to a handler in cli/commands.py, and main() creates a Store() and calls args.func(store, args). It registers 7 subcommands: add, list, remove, count, export, import, and tag-overlap.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/cli/main.py#L1-L56",
+          "version": "repo-lines-v1:sha256:d83778f4efb978e84eed3837c0083b44628a2a0fc0feb1f7c6624f2e5cd2c971:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhNjE1NmNjNGUzMjVhMTRjZDUwMzYyMmYyNDFjOWUzNDRlZmFiMWUxN2EwNTQxODBjODJlMzA4N2U0YWNlOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZTk5MjMyY2QzYTMwOWY1MGNiZDZmNjYyMTI3ZWVhYWZjZTFmNzM2MjkyZGVmYjExM2Q5ODFhMjBjN2Q4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b27ff7babdb14a16aba9c2f2e147e6f5",
+      "statement": "The cli->sync dependency edge is exercised by the export and import subcommands: cli/commands.py imports sync.exporter.export_to_json/export_to_markdown and sync.importer.import_from_json directly, and cmd_export/cmd_import delegate to them.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/cli/commands.py#L42-L50",
+          "version": "repo-lines-v1:sha256:0cf621e259b0b6efa3c0e44373f479ad37774695843995cac247804680273054:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTlmODBhNzhkMTgwMjdhZDNlOGRhY2Q5Y2E4NjRlMjNmNzQxZGE5MGQ5ZmJjMjY2MjNkOTU1MzA2MmI4OGIyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJlMzk0YTFlODhkNTk0ZGJjMWE4OGEwYThiOTVhYjI0ODg1MWViZWYyYWE5ZGZlOTBjZjE3ZWY0YTUwZThhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzA0MWUwMWE1MjY5YTNjMWQ5OTk2MTQwMzM5YTE4YjJlY2FjZWU2OTZmZTBlMmE0NWM5OWMyNDJhN2FjOGI2YyJ9"
+        },
+        {
+          "resource": "repo://linkkeep/cli/commands.py#L7-L9",
+          "version": "repo-lines-v1:sha256:d849b9771595ea2ba375d12493d8315655b85fcaf696a0a0afb253b445843bfe:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE0ZDg2N2MzNzU2NjIyODRmYmZiYTVkOTNhYjQ4MjFiMzM4NGVkNzU2MWExMjk2MmZlMWY2MGQ4ZjQ4ZTFkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBlMGEzYWQ1MDk5Y2Q2NDVkZGVkOGU3Yjg3ZTgyNzQ2ZTFlMzZhY2U2ZGE4NzliNjI5YmU1YWYyZDAyMmU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk1NTA0ZDZiZDg5OWM1ODYxNDU5ZmY1NzU0NzkxZGY0ZDNmYjFkNmNkYWYzMDU2NzkzY2FjYmJlODgxZTQzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjliYmRhODNmNjg4ZjZhOTRlZWUwM2U2N2QwYjQxZmQ0MTU1MWMxMWFhNGYzMjYxMjFhMjIyNTEyYjFkMzM0YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0c24cc630d54bab8a92e26b2c552822",
+      "statement": "cmd_top_tags is defined in cli/commands.py (prints top-N tags via core.tags.top_tags) but no top-tags subparser is registered in cli/main.py, so it is unreachable from the CLI.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/cli/commands.py#L57-L61",
+          "version": "repo-lines-v1:sha256:5f87fae592ab2ec1b27ccaa6097626cc4301e7bbba894f799e32bbdb03bdf089:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjcxMTkxMzIyZDZkOGY4YjFjOTIyNmFlZGZiNDBiMWU0ODdhYTE0MGY2NmExYjExZTIzYjdkMDA2ODhjZTU0YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTJiNjU1ZmRhZWNjYzY5YTQzZDVmMmY1YmU2NzU4NWQzZjJhZTZhZmM5NTNlNzY3OTcwYTczNTFmMjg5ZmEwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBmNTU1ZjZiYmNkMzUyZGVlMjIwMTQ2OTAyOTdlOGQzNGE2Mjc0NzMwYTk5YzIyOTllYjNmMDEzZjkzODE0OCJ9"
+        },
+        {
+          "resource": "repo://linkkeep/cli/main.py#L1-L56",
+          "version": "repo-lines-v1:sha256:d83778f4efb978e84eed3837c0083b44628a2a0fc0feb1f7c6624f2e5cd2c971:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhNjE1NmNjNGUzMjVhMTRjZDUwMzYyMmYyNDFjOWUzNDRlZmFiMWUxN2EwNTQxODBjODJlMzA4N2U0YWNlOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZTk5MjMyY2QzYTMwOWY1MGNiZDZmNjYyMTI3ZWVhYWZjZTFmNzM2MjkyZGVmYjExM2Q5ODFhMjBjN2Q4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_941feca5356a472dbd5406d0a538c329",
+      "statement": "sync.exporter provides export_to_json (same JSON array format as Store's internal file, round-trippable by the importer) and export_to_markdown (groups bookmarks by tag, sorts tags alphabetically, places untagged bookmarks under a (无标签) section). count_by_tag provides a pre-export distribution preview.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/sync/exporter.py#L1-L56",
+          "version": "repo-lines-v1:sha256:4f5ab9e94984586962d8e7483eb414c2004aa71e9e4f4de459ab9d6b2e7a0545:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYTRhZTIzODhiZWU2M2Q1YmI0ZDEwNjNjM2NmNDFkMWQxYjZkOGU0ZWI0YTFhNjFjZmE2YjQ0OTRjOTk2MzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlMDFkZTA0ZGY3MmMzMGRjZTk5MWU3M2E0MTQ5NDYxNjM4MTcxZDQwNGRlZjlmZWFjZTZlYWIyZGExNDcxOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_38d38022b07d4ff79ac75cfe10c9b0a1",
+      "statement": "sync.importer.import_from_json reads a JSON file, validates each item has a url field (raises ValueError otherwise), deduplicates incoming bookmarks against existing Store bookmarks by normalized URL, reassigns IDs sequentially starting from store.next_id(existing), saves existing+fresh, and returns the count of newly added bookmarks.",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/sync/importer.py#L1-L29",
+          "version": "repo-lines-v1:sha256:f0c71a9a901e316792a9710fe05dc7ccaa49c82a853d0c6f0a502e4cc1b43a80:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MTQzOWVhZmQ2MGY2NjU1NzI2NTRmYTJlZDJlYTIyYjc1YThlNTYzNzAzYTczODYzMzc0NzRmNmNmNGI0MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MDE3N2RkYzJlMGIxMjdjMDAwYTEyNzJiNjNjNTczZTEyNTYxNjRmMTEyYzJjNzI4ZDA5ZGJlNGU2NDI4NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c21c227a601146cb868b75da05981805",
+      "statement": "sync.dedup provides normalize_url (strips trailing slashes, lowercases the entire string), dedup_by_url (returns incoming bookmarks whose normalized URL is not in the existing set and not already seen earlier in the same incoming batch; existing wins, no overwrite), and dedup_stats (pre-import preview of incoming, fresh, and dropped counts).",
+      "evidence": [
+        {
+          "resource": "repo://linkkeep/sync/dedup.py#L1-L35",
+          "version": "repo-lines-v1:sha256:ed8b72c0ed7f978c587545365ed6c3bc05663b0b0b030a540f524c0ddeaf0763:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMTFkMmI3OTA4YWU3MGRkODc1Y2U3YWMxOTc1MjY0ZGVmOTUzODkyMmIxNzI5YmFkMzk3Nzc5MzJlOWNlOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyNmFiZmQxMWQyNGY4MWNkN2U2YTVhZTJlYzEzNzRjNmM3MTkwYTkwODJmMGVmMDgwZDMwMDRjYzZhMDI4MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a84124be86140a09a4ccb003665e22b",
+      "statement": "The test suite is organized one file per domain under tests/, each using a temp-directory Store for isolation: test_core covers Bookmark round-trip, Store CRUD/next_id, tag normalization/counts, and tag_overlap AND semantics; test_api uses FastAPI TestClient with deps._store_singleton overridden; test_sync covers normalize_url, dedup_by_url, export round-trips, and import dedup-and-merge.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_api.py#L1-L51",
+          "version": "repo-lines-v1:sha256:a3abadb02655d7d37b5a7001dfb5529cff76b713f88e2a36768fd6d98a67149a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5YjljYzhkNDU2NzJjMzNhZTAyZjZlZGEyNzdjODA3MTM0ZTAxYmQ3NDEzOWQyZmY1MTBjZmQzNGFmMWExNzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZGI1NTJjZGY2MjAxZGNkYWZjZWE3ZmEzNGMzYzhmY2U2MTkxZWJiZDkzYmE5OTJlZmVmYjg2MDcyNTc5ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_core.py#L1-L71",
+          "version": "repo-lines-v1:sha256:a936e3e368797e2290df3ffdb87faa7e77af8ca1f5d7b2aec98969344481bfd3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMDYzZjY5NDRlN2FiOWUyNWZjOWJkYmExODA5NDM0ODcxMDI0YTQ5ZmZjZGY5MWYzZjg3ZTYwZGJlMGM0NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4YmUwNDg4NjMxZmQzYTQxY2U3OTg3ODRmNTM1MTg1MzgwMGIyNTlkOTQ4ODUxYjU3NjU5Yjc5NjI0NTUzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_sync.py#L1-L59",
+          "version": "repo-lines-v1:sha256:28194ce06152994e43779cfb10536060adb2e7650cfa737bee4a52f04a473b39:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjODI5ZGYxYTE1YmY4MzE3Nzg0NmI5OTYwNWI0MTNiYmI1MDE0YjUzMzQ1NDJjY2JiZWM5NmIwZjY5NjZjY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliYWRhNzQ5ZDBhM2Q3NTE4M2Q1MDM2OTc4OThiNzk3YWIwMzAyMWE4NDI0MDZlNDBmMTJiZDZjODNjZWY5MjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.3",
+    "at": "2026-11-02T17:44:06.992Z"
+  }
+}
